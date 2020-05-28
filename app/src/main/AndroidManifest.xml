@@ -34,7 +34,6 @@
 
         <receiver android:name=".setrepeating.SetRepeatingAlarmReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
