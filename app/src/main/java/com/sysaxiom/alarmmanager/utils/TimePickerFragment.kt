@@ -1,4 +1,4 @@
-package com.sysaxiom.alarmmanager.set
+package com.sysaxiom.alarmmanager.utils
 
 import android.app.Dialog
 import android.text.format.DateFormat.is24HourFormat

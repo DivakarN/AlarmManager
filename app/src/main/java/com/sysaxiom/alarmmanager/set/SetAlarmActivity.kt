@@ -11,6 +11,8 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.TimePicker
 import com.sysaxiom.alarmmanager.R
+import com.sysaxiom.alarmmanager.utils.AlarmReceiver
+import com.sysaxiom.alarmmanager.utils.TimePickerFragment
 import java.text.DateFormat
 import java.util.*
 
@@ -55,7 +57,7 @@ class SetAlarmActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener
 
     private fun startAlarm(c: Calendar) {
         val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val intent = Intent(this, SetAlertReceiver::class.java)
+        val intent = Intent(this, AlarmReceiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0)
         if (c.before(Calendar.getInstance())) {
             c.add(Calendar.DATE, 1)
@@ -65,7 +67,7 @@ class SetAlarmActivity : AppCompatActivity(), TimePickerDialog.OnTimeSetListener
 
     private fun cancelAlarm() {
         val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val intent = Intent(this, SetAlertReceiver::class.java)
+        val intent = Intent(this, AlarmReceiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0)
         alarmManager.cancel(pendingIntent)
         mTextView.setText("Alarm canceled")

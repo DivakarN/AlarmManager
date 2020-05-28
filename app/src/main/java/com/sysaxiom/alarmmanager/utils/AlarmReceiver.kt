@@ -1,20 +1,20 @@
-package com.sysaxiom.alarmmanager.setrepeating
+package com.sysaxiom.alarmmanager.utils
 
+import android.content.Intent
 import android.content.BroadcastReceiver
 import android.content.Context
-import android.content.Intent
-import com.sysaxiom.alarmmanager.set.NotificationHelper
+import android.widget.Toast
+import java.lang.Exception
 
-class SetRepeatingAlarmReceiver : BroadcastReceiver() {
-
+class AlarmReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         try{
+            Toast.makeText(context,"Notification Triggered",Toast.LENGTH_LONG).show()
             val notificationHelper = NotificationHelper(context)
             val nb = notificationHelper.channelNotification
             notificationHelper.manager?.notify(1, nb.build())
-        } catch (e : java.lang.Exception){
+        } catch (e : Exception){
             e.printStackTrace()
         }
     }
-
 }

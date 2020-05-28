@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.sysaxiom.alarmmanager.R
+import com.sysaxiom.alarmmanager.utils.AlarmReceiver
 
 class SetRepeatingAlarmActivity : AppCompatActivity() {
 
@@ -34,14 +35,14 @@ class SetRepeatingAlarmActivity : AppCompatActivity() {
 
     private fun startAlarm() {
         val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val intent = Intent(this, SetRepeatingAlarmReceiver::class.java)
+        val intent = Intent(this, AlarmReceiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0)
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 30000 ,pendingIntent)
     }
 
     private fun cancelAlarm() {
         val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val intent = Intent(this, SetRepeatingAlarmReceiver::class.java)
+        val intent = Intent(this, AlarmReceiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0)
         alarmManager.cancel(pendingIntent)
     }

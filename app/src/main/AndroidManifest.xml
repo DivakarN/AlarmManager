@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,16 +22,12 @@
         <activity android:name=".set.SetAlarmActivity" />
         <activity android:name=".setrepeating.SetRepeatingAlarmActivity"/>
 
-        <receiver android:name=".set.SetAlertReceiver">
+        <receiver android:name=".utils.AlarmReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".setrepeating.SetRepeatingAlarmReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
+
     </application>
 
 </manifest>

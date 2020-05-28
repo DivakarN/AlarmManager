@@ -1,4 +1,4 @@
-package com.sysaxiom.alarmmanager.set
+package com.sysaxiom.alarmmanager.utils
 
 import android.app.NotificationManager
 import android.app.NotificationChannel
@@ -19,7 +19,9 @@ class NotificationHelper(base: Context) : ContextWrapper(base) {
             }
             return mManager
         }
-    val channelNotification = NotificationCompat.Builder(applicationContext, channelID)
+    val channelNotification = NotificationCompat.Builder(applicationContext,
+        channelID
+    )
             .setContentTitle("Alarm!")
             .setContentText("Your AlarmManager is working.")
             .setSmallIcon(R.drawable.ic_android)

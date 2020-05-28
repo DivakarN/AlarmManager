@@ -1,10 +1,10 @@
-package com.sysaxiom.alarmmanager
+package com.sysaxiom.alarmmanager.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
+import com.sysaxiom.alarmmanager.R
 import com.sysaxiom.alarmmanager.set.SetAlarmActivity
 import com.sysaxiom.alarmmanager.setrepeating.SetRepeatingAlarmActivity
 
